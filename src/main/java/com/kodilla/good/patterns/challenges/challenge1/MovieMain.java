@@ -7,7 +7,6 @@ public class MovieMain {
 
         movieStore.getMovies().entrySet().stream()
                 .map(entry -> entry.getKey()+": "+entry.getValue())
-                .forEach(System.out::println);
-
+                .forEach(e -> System.out.print(e+" ! "));
     }
 }
