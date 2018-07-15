@@ -7,5 +7,12 @@ public class Challenge4Main {
 
         flightsSearch.findFlights(true).stream()
                 .forEach(System.out::println);
+
+        //możliwe loty znajdz mi lot z warszawy do nowego roku
+        //mapa from to,
+        //rekurencja!!!
+        //metoda szuka lotów
+        //klucz w mapie String value List
+        //każda klucz ma liste
     }
 }

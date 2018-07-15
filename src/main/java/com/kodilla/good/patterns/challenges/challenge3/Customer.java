@@ -1,15 +1,13 @@
 package com.kodilla.good.patterns.challenges.challenge3;
 
-public class Distributor {
+public class Customer {
 
     private final String name;
-    private final String nipNumber;
     private final String product;
     private final Integer quantityOfProduct;
 
-    Distributor(String name, String nipNumber, String product, Integer quantityOfProduct) {
+    public Customer(String name, String product, Integer quantityOfProduct) {
         this.name = name;
-        this.nipNumber = nipNumber;
         this.product = product;
         this.quantityOfProduct = quantityOfProduct;
     }
@@ -24,9 +22,8 @@ public class Distributor {
 
     @Override
     public String toString() {
-        return "Distributor{" +
+        return "Customer{" +
                 "name='" + name + '\'' +
-                ", nipNumber='" + nipNumber + '\'' +
                 ", product='" + product + '\'' +
                 ", quantityOfProduct=" + quantityOfProduct +
                 '}';
