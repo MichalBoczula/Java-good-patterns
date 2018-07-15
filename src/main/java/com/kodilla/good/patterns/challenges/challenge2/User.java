@@ -1,28 +1,28 @@
 package com.kodilla.good.patterns.challenges.challenge2;
 
-public class Customer {
+public class User {
 
     private String username;
-    private String product;
+    private String pesel;
 
-    public Customer(final String username, final String product) {
+    public User(String username, String pesel) {
         this.username = username;
-        this.product = product;
+        this.pesel = pesel;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public String getProduct() {
-        return product;
+    public String getPesel() {
+        return pesel;
     }
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "User{" +
                 "username='" + username + '\'' +
-                ", product='" + product + '\'' +
+                ", pesel='" + pesel + '\'' +
                 '}';
     }
 }

@@ -2,21 +2,28 @@ package com.kodilla.good.patterns.challenges.challenge2;
 
 public class ProductOrderService {
 
-    private final Order order;
+    private InformationService informationService;
+    private OrderService orderService;
+    private OrderRepository orderRepository;
 
-    public ProductOrderService(Order order) {
-        this.order = order;
+    public ProductOrderService(final InformationService informationService,
+                           final OrderService orderService,
+                           final OrderRepository orderRepository) {
+        this.informationService = informationService;
+        this.orderService = orderService;
+        this.orderRepository = orderRepository;
     }
 
-    public OrderDto OrderProcess(){
-        boolean isSold = order.sell();
-        if (isSold){
+    public OrderDto process(final OrderRequest orderRequest) {
+        boolean isRented = orderService.order(orderRequest.getUser(), orderRequest.getFrom(),
+                orderRequest.getTo());
 
-            order.sendMessageToCustomer();
-            order.sendMessageToSeller();
-            return new OrderDto(order.getCustomer(), order.getSeller(), true);
-        } else{
-            return new OrderDto(order.getCustomer(), order.getSeller(), false);
+        if(isRented) {
+            informationService.inform(orderRequest.getUser());
+            orderRepository.createOrder(orderRequest.getUser(), orderRequest.getFrom(), orderRequest.getTo());
+            return new OrderDto(orderRequest.getUser(), true);
+        } else {
+            return new OrderDto(orderRequest.getUser(), false);
         }
     }
 }

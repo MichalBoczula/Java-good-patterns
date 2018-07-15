@@ -2,34 +2,27 @@ package com.kodilla.good.patterns.challenges.challenge2;
 
 public class OrderDto {
 
-    private Customer customer;
-    private Seller seller;
-    private boolean isSold;
+    private User user;
+    private boolean isOrder;
 
-    public OrderDto(Customer customer, Seller seller, boolean isSold) {
-        this.customer = customer;
-        this.seller = seller;
-        this.isSold = isSold;
+    public OrderDto(User user, boolean isOrder) {
+        this.user = user;
+        this.isOrder = isOrder;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public User getUser() {
+        return user;
     }
 
-    public Seller getSeller() {
-        return seller;
-    }
-
-    public boolean isSold() {
-        return isSold;
+    public boolean isOrder() {
+        return isOrder;
     }
 
     @Override
     public String toString() {
         return "OrderDto{" +
-                "customer=" + customer +
-                ", seller=" + seller +
-                ", isSold=" + isSold +
+                "user=" + user +
+                ", isOrder=" + isOrder +
                 '}';
     }
 }
