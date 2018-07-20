@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.challenge4.UP;
+package com.kodilla.good.patterns.challenges.challenge4;
 
 public class Challenge4Main {
 
