@@ -10,5 +10,6 @@ public class Challenge4Main {
                 .forEach(System.out::println);
         flightService.findFlightToWithCharge("warsaw", "london").stream()
                 .forEach(System.out::println);
+        System.out.println(flightService.isFlightAvalieble("warsaw", "london"));
     }
 }
